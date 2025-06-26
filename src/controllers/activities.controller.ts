@@ -74,7 +74,7 @@ export const deleteActivity = async (req: Request, res: Response) => {
             return;
         }
         await activityRepo.remove(activity);
-        res.json({ message: "Actividad eliminada correctamente" });
+        res.status(200).json({ message: "Actividad eliminada exitosamente" });
     } catch (error) {
         if (error instanceof Error) {
             res.status(500).json({ message: error.message });
