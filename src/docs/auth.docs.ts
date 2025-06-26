@@ -38,10 +38,6 @@
  *     responses:
  *       201:
  *         description: Usuario creado exitosamente
- *       409:
- *         description: Ya existe un usuario con ese email
- *       400:
- *         description: Datos inválidos
  */
 
 /**
@@ -87,8 +83,4 @@
  *                       type: string
  *                     email:
  *                       type: string
- *       401:
- *         description: Credenciales inválidas
- *       400:
- *          description: Datos incompletos
  */

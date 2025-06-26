@@ -36,8 +36,6 @@
  *     responses:
  *       201:
  *         description: Actividad creada exitosamente
- *       400:
- *         description: Datos inválidos
  */
 
 /**
@@ -72,8 +70,6 @@
  *     responses:
  *       200:
  *         description: Actividad actualizada exitosamente
- *       400:
- *         description: Datos inválidos
  */
 
 /**
@@ -99,8 +95,8 @@
  *     responses:
  *       200:
  *         description: Actividad eliminada exitosamente
- *       400:
- *         description: Datos inválidos
+ *       404:
+ *         description: Actividad no encontrada
  */
 
 /**
@@ -140,7 +136,7 @@
  *                 example: true
  *     responses:
  *       200:
- *         description: Lista de actividades del usuario
+ *         description: Actividades obtenidas exitosamente
  *       400:
- *         description: Datos inválidos
+ *         description: No se encontraron actividades para este usuario
  */
