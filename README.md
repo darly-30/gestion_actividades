@@ -38,7 +38,7 @@ src/
 1. Clona el repositorio:
 
 ```bash
-git clone https://github.com/tuusuario/tu-proyecto.git
+git clone https://github.com/darly-30/gestion_actividades
 cd tu-proyecto
 ```
 
