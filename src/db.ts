@@ -1,15 +1,17 @@
 import { DataSource } from "typeorm";
-import {User} from "./entities/User"
+import {User} from "./entities/user.entity"
 import { userInfo } from "os";
-import { Activity } from "./entities/Activity";
+import { Activity } from "./entities/activity.entity";
+import dotenv from 'dotenv';
+dotenv.config();
 
 export const AppDataSource = new DataSource({
     type: "postgres",
-    host: "localhost",
-    port: 5432,
-    username: "postgres",
-    password: "12345678",
-    database: "gestion",
+    host: process.env.DB_HOST,
+    port: Number(process.env.DB_PORT),
+    username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
     synchronize: true,
     logging: true,
     entities: [User, Activity],

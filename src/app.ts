@@ -1,14 +1,20 @@
 import express from 'express'
 import morgan from 'morgan'
 import cors from 'cors'
-import userRoute from './routes/user.routes'
+import dotenv from 'dotenv';
+import swaggerUi from 'swagger-ui-express';
+import { swaggerSpec } from './config/swagger';
+import routes from './routes';
 
 const app = express ()
 
-app.use(morgan('dev')) //para que me muestre las peticiones que mando
-app.use(cors()) //para conectar con frontend
+app.use(morgan('dev'));
+app.use(cors()) ;
+dotenv.config();
 app.use(express.json());
-app.use(userRoute)
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use(routes);
+
 
 
 export default app;

@@ -1,5 +1,6 @@
-import {BaseEntity, Column, CreateDateColumn, Entity, OneToMany, PrimaryColumn, PrimaryGeneratedColumn, Unique} from 'typeorm'
-import {Activity } from './Activity'
+import {BaseEntity, Column, Entity, OneToMany, PrimaryGeneratedColumn} from 'typeorm'
+import {Activity } from './activity.entity'
+
 
 @Entity()
 
@@ -14,11 +15,12 @@ export class User extends BaseEntity{
     @Column()
     lastName: string
 
-    @Column()
+    @Column({unique: true})
     email: string
 
     @Column()
     password: string
+
     @OneToMany(() => Activity, activity => activity.user)
     activities: Activity[];
 }
